@@ -27,7 +27,7 @@ export default function FlightCard({ flight }: FlightCardProps) {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         {/* Airline and Route */}
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
             {flight.airline}
           </h3>
           <div className="flex items-center gap-2 mt-1">
@@ -47,19 +47,19 @@ export default function FlightCard({ flight }: FlightCardProps) {
         {/* Flight Details */}
         <div className="flex flex-wrap gap-4 text-sm">
           <div className="flex items-center gap-1">
-            <span className="text-gray-500 dark:text-gray-400">_dep:</span>
+            <span className="text-gray-500 dark:text-gray-400">Dep:</span>
             <span className="font-medium text-gray-700 dark:text-gray-300">
               {formatTime(flight.departureTime)}
             </span>
           </div>
           <div className="flex items-center gap-1">
-            <span className="text-gray-500 dark:text-gray-400">arr:</span>
+            <span className="text-gray-500 dark:text-gray-400">Arr:</span>
             <span className="font-medium text-gray-700 dark:text-gray-300">
               {formatTime(flight.arrivalTime)}
             </span>
           </div>
           <div className="flex items-center gap-1">
-            <span className="text-gray-500 dark:text-gray-400">dur:</span>
+            <span className="text-gray-500 dark:text-gray-400">Dur:</span>
             <span className="font-medium text-gray-700 dark:text-gray-300">
               {flight.duration}
             </span>
@@ -78,7 +78,7 @@ export default function FlightCard({ flight }: FlightCardProps) {
             </span>
           </div>
           <div className="text-right">
-            <p className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+            <p className="text-xl sm:text-2xl font-bold text-indigo-600 dark:text-indigo-400">
               {flight.currency} {flight.price}
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400">

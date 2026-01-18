@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flight Search Web App
 
-## Getting Started
+A modern, responsive flight search application built with React and Next.js. The app features real-time flight searching, filtering, and visualization with interactive price graphs.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 16.1.3** - React framework for production
+- **React 19.2.3** - Frontend library
+- **TypeScript** - Static type checking
+- **Tailwind CSS** - Utility-first CSS framework
+- **Recharts** - Charting library for data visualization
+- **React Hooks** - State management
+
+## Features
+
+- **Flight Search Form** - Search for flights by origin, destination, and travel date
+- **Interactive Flight List** - Browse and compare flights with detailed information
+- **Live Filtering System** - Filter flights by stops, price range, and airlines in real-time
+- **Price Visualization** - Interactive bar chart showing flight prices across airlines
+- **Responsive Design** - Fully responsive layout that works on mobile, tablet, and desktop
+- **Dark Mode Support** - Automatic dark/light mode based on system preference
+- **Loading & Error States** - Comprehensive UI states for better user experience
+- **Real-time Updates** - Price graph and flight list update simultaneously with filters
+
+## Installation & Running
+
+1. **Clone the repository or navigate to the project directory**
+   ```bash
+   cd flight-search
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Visit [http://localhost:3000](http://localhost:3000) to view the application
+
+## Usage
+
+1. Enter origin and destination airports (e.g., JFK, LAX)
+2. Select a travel date
+3. Click "Search Flights" to load available flights
+4. Use the filters to refine your search:
+   - Stops: Filter by non-stop, 1 stop, or 2+ stops
+   - Price Range: Set maximum price
+   - Airlines: Select preferred airlines
+5. View the flight list and corresponding price graph
+6. The price graph updates in real-time as you apply filters
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js app router pages
+│   ├── globals.css         # Global styles
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx            # Main page
+├── components/             # Reusable UI components
+│   ├── FlightCard.tsx      # Individual flight display
+│   ├── FlightList.tsx      # Flight list container
+│   ├── PriceGraph.tsx      # Price visualization chart
+│   ├── SearchForm.tsx      # Flight search form
+│   └── Filters.tsx         # Filter controls
+├── hooks/                  # Custom React hooks
+│   └── useFlights.ts       # Flight data management
+└── services/               # External service integrations
+    └── amadeus.ts          # Mock flight data service
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Functionality
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **State Management**: Custom `useFlights` hook manages flight data, filters, and loading states
+- **Data Flow**: Single source of truth for filtered flights shared between list and graph
+- **Responsive Design**: Mobile-first approach with breakpoints for all screen sizes
+- **Performance**: Optimized rendering and efficient filtering algorithms
+- **Accessibility**: Semantic HTML and proper ARIA attributes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## UX Highlights
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Clean, intuitive interface with consistent spacing and typography
+- Smooth transitions and hover effects for better interactivity
+- Real-time synchronization between flight list and price graph
+- Comprehensive loading, empty, and error state handling
+- Visual indicators for flight stops (non-stop vs connecting)
+- Dark mode support for comfortable viewing in any lighting
